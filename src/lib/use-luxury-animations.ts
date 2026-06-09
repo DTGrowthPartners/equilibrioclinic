@@ -95,17 +95,22 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
 
       // ───── Section reveals (fade + y) ─────
       gsap.utils.toArray<HTMLElement>(".reveal-section").forEach((section) => {
-        gsap.from(section, {
-          opacity: 0,
-          y: 40,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 95%",
-            once: true,
+        gsap.fromTo(
+          section,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: section,
+              start: "top 95%",
+              once: true,
+            },
           },
-        });
+        );
       });
 
       // ───── Display titles: line reveal (curtain rise) ─────
@@ -127,25 +132,36 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
       // ───── Service cards: staggered entrance + hover ─────
       gsap.utils.toArray<HTMLElement>(".cards-grid").forEach((grid) => {
         const cards = grid.querySelectorAll(".service-card");
-        gsap.from(cards, {
-          opacity: 0,
-          y: 30,
-          duration: 1,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: { trigger: grid, start: "top 95%", once: true },
-        });
+        gsap.fromTo(
+          cards,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power3.out",
+            immediateRender: false,
+            scrollTrigger: { trigger: grid, start: "top 95%", once: true },
+          },
+        );
       });
 
       // ───── Promo chips entrance ─────
-      gsap.from(".promo-chip", {
-        opacity: 0,
-        y: 20,
-        duration: 0.9,
-        stagger: 0.06,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".promo-grid", start: "top 95%", once: true },
-      });
+      gsap.fromTo(
+        ".promo-chip",
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          stagger: 0.06,
+          ease: "power3.out",
+          immediateRender: false,
+          scrollTrigger: { trigger: ".promo-grid", start: "top 95%", once: true },
+        },
+      );
+
 
 
       // ───── CTA breathing (idle micro-animation) ─────

@@ -220,13 +220,25 @@ function Index() {
           </div>
 
           <div className="relative">
-            <div className="hero-image relative aspect-[4/5] overflow-hidden rounded-3xl shadow-soft">
-              <img
-                src={heroImg}
-                alt="Mujer con piel luminosa"
+            <div className="hero-image relative aspect-[4/5] overflow-hidden rounded-3xl shadow-soft bg-foreground/10">
+              <video
                 className="h-full w-full object-cover"
-                width={1080}
-                height={1350}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={heroImg}
+              >
+                <source
+                  src="https://equilibrioclinic.com.co/wp-content/uploads/2025/06/Generated-File-June-16-2025-1_47PM.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              {/* Sutil overlay para profundidad luxury */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/25 via-transparent to-transparent"
               />
             </div>
           </div>

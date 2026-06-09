@@ -1,13 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
-import logoAsset from "@/assets/logo.asset.json";
-import sopranoAsset from "@/assets/soprano.asset.json";
+import logo from "@/assets/logo.png";
 import flowers from "@/assets/flowers.png";
 
 import heroImg from "@/assets/hero.jpg";
-import laserImg from "@/assets/laser.jpg";
-import facialImg from "@/assets/facial.jpg";
-import bodyImg from "@/assets/body.jpg";
+import laserImg from "@/assets/depilacionlaser.jpg";
+import facialImg from "@/assets/tratamientos-faciales.jpg";
+import bodyImg from "@/assets/tratamientos-corporales.jpg";
+import cejasImg from "@/assets/cejas.webp";
+import dermatologiaImg from "@/assets/dermatologia.webp";
+import relajamientoImg from "@/assets/relajamiento.webp";
+import maquinaImg from "@/assets/maquina-soprano.png";
+import sedeBocagrandeImg from "@/assets/sede-bocagrande.png";
+import sedeCastellanaImg from "@/assets/sede-castellana.png";
+import draKathyImg from "@/assets/dra-kathy-wu.jpg";
+
+const DERMATOLOGIA_WA =
+  "https://web.whatsapp.com/send/?phone=573005410171&text=Hola%20Dra%20Kathy!%20Vengo%20de%20D%C3%ADa%20de%20las%20Madres%20Links%2C%20quiero%20agendar%20una%20cita&type=phone_number&app_absent=0";
 import { useLuxuryAnimations } from "@/lib/use-luxury-animations";
 import { wa, WA_CONTACTS, waLink } from "@/lib/whatsapp";
 
@@ -38,34 +47,6 @@ const NAV = [
   { label: "Contacto", href: "#contacto" },
 ];
 
-const PROMOS = [
-  "Glúteos de impacto",
-  "Glúteos perfectos",
-  "Rejuvenecimiento 360°",
-  "Depilación Láser – 8 sesiones Bikini",
-  "Depilación Láser – 12 Sesiones",
-  "Combos 12 Sesiones Depilación Láser",
-  "Tratamientos Faciales",
-  "Drenaje Linfático",
-  "Masajes Reductores",
-  "Maderoterapia",
-  "Relajación Muscular",
-  "Post-operatorio Regenerativo",
-  "Transformación Integral del Cuerpo",
-  "Grasa Rebelde Inteligente",
-  "Paquete Anticelulítico Completo",
-  "Músculo fuerte + Piel firme",
-  "Desinflama + Regenera + Remodela",
-  "Combo 8 sesiones Axila + Bikini",
-  "12 sesiones Axila",
-  "12 sesiones Combo Axila + Bikini",
-  "Combo Axila + Bikini + Media Pierna",
-  "12 Sesiones Bikini",
-  "Combo Axila + Bikini + Pierna Completa",
-  "8 Sesiones Bozo",
-  "12 Sesiones Bozo",
-];
-
 const SERVICES = [
   {
     img: laserImg,
@@ -86,10 +67,22 @@ const SERVICES = [
     msg: "Hola, quiero saber sobre Rejuvenecimiento Facial.",
   },
   {
-    img: heroImg,
+    img: cejasImg,
     title: "Cejas y Pestañas",
     desc: "Micropigmentación, diseño y realce. Una mirada armónica y duradera.",
     msg: "Hola, info de Cejas y Pestañas por favor.",
+  },
+  {
+    img: dermatologiaImg,
+    title: "Dermatología",
+    desc: "Atención dermatológica especializada para el cuidado y salud de tu piel.",
+    msg: "Hola, quisiera información sobre Dermatología.",
+  },
+  {
+    img: relajamientoImg,
+    title: "Relajamiento",
+    desc: "Masajes y terapias de relajación muscular para liberar tensión y renovar tu bienestar.",
+    msg: "Hola, me interesan los servicios de Relajamiento.",
   },
 ];
 
@@ -145,7 +138,7 @@ function Index() {
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background/80 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
           <a href="#inicio" className="flex items-center">
-            <img src={logoAsset.url} alt="Equilibrio Clinic" className="h-8 w-auto md:h-10" />
+            <img src={logo} alt="Equilibrio Clinic" className="h-8 w-auto md:h-10" />
           </a>
           <ul className="hidden items-center gap-8 text-sm tracking-wider-2 uppercase lg:flex">
             {NAV.map((n) => (
@@ -191,11 +184,11 @@ function Index() {
         {/* Overlays luxury: oscurece para legibilidad + tinte de marca */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-black/60"
+          className="pointer-events-none absolute inset-0 bg-black/25"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/45"
         />
 
 
@@ -237,41 +230,6 @@ function Index() {
         </div>
       </section>
 
-      {/* ─────────── PROMOS DE LA SEMANA DE LA MUJER ─────────── */}
-      <section id="promos" className="reveal-section relative bg-background py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center">
-            <p className="tracking-luxury text-xs uppercase text-primary">• Especial •</p>
-            <h2 className="mt-4 font-display text-4xl md:text-6xl">
-              <span className="reveal-line">
-                <span>Promos de la</span>
-              </span>{" "}
-              <span className="reveal-line">
-                <span className="font-script text-coral-deep">Semana de la Mujer</span>
-              </span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
-              Una selección curada de tratamientos para celebrarte.
-            </p>
-          </div>
-
-          <div className="promo-grid mt-14 flex flex-wrap justify-center gap-3">
-            {PROMOS.map((p) => (
-              <a
-                key={p}
-                href={wa(`Hola, quiero información sobre: ${p}`)}
-                target="_blank"
-                rel="noreferrer"
-                className="promo-chip group inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm transition hover:border-primary hover:shadow-card"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-coral-deep transition group-hover:scale-150" />
-                {p}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─────────── SERVICIOS ─────────── */}
       <section id="servicios" className="reveal-section relative bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-6">
@@ -287,7 +245,7 @@ function Index() {
             </h2>
           </div>
 
-          <div className="cards-grid mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="cards-grid mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => (
               <a
                 key={s.title}
@@ -316,6 +274,32 @@ function Index() {
               </a>
             ))}
           </div>
+
+          {/* ─────────── Banner Dermatología · Dra. Kathy Wu ─────────── */}
+          <a
+            href={DERMATOLOGIA_WA}
+            target="_blank"
+            rel="noreferrer"
+            className="service-card group mt-10 flex items-center gap-5 rounded-3xl bg-gradient-copper p-5 text-primary-foreground shadow-card transition duration-500 hover:-translate-y-1 hover:shadow-soft sm:gap-6 sm:p-6"
+          >
+            <img
+              src={draKathyImg}
+              alt="Dra. Kathy Wu"
+              loading="lazy"
+              className="h-16 w-16 flex-shrink-0 rounded-full border-2 border-primary-foreground/40 object-cover sm:h-20 sm:w-20"
+            />
+            <div className="flex flex-col gap-1">
+              <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2 sm:text-2xl">
+                Dermatología
+              </h3>
+              <p className="text-sm text-primary-foreground/90 sm:text-base">
+                Reserva una cita con la <strong className="font-semibold">Dra. Kathy Wu</strong>
+              </p>
+              <span className="mt-1 text-xs tracking-wider-2 uppercase text-primary-foreground/80">
+                Agendar por WhatsApp →
+              </span>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -384,7 +368,7 @@ function Index() {
 
           <div className="wipe-image relative">
             <img
-              src={sopranoAsset.url}
+              src={maquinaImg}
               alt="Soprano Ice Titanium"
               loading="lazy"
               className="mx-auto w-full max-w-lg drop-shadow-2xl"
@@ -529,28 +513,40 @@ function Index() {
               {
                 name: "Sede Bocagrande",
                 addr: "Cra. 2 #6-137 Piso 2, Cartagena de Indias, Bolívar.",
+                img: sedeBocagrandeImg,
               },
               {
                 name: "Sede Castellana",
                 addr: "Dg. 31 #62-57, Chipre, Cartagena de Indias, Bolívar.",
+                img: sedeCastellanaImg,
               },
             ].map((s) => (
               <div
                 key={s.name}
-                className="service-card rounded-3xl border border-border bg-card p-8 shadow-card"
+                className="service-card flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card"
               >
-                <h3 className="font-condensed text-2xl font-semibold uppercase tracking-wider-2">
-                  {s.name}
-                </h3>
-                <p className="mt-4 text-sm text-muted-foreground">{s.addr}</p>
-                <a
-                  href={wa(`Hola, quiero agendar en ${s.name}.`)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-flex items-center rounded-full bg-gradient-copper px-6 py-3 text-xs tracking-wider-2 uppercase text-primary-foreground"
-                >
-                  Agendar aquí
-                </a>
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt={s.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-8">
+                  <h3 className="font-condensed text-2xl font-semibold uppercase tracking-wider-2">
+                    {s.name}
+                  </h3>
+                  <p className="mt-4 text-sm text-muted-foreground">{s.addr}</p>
+                  <a
+                    href={wa(`Hola, quiero agendar en ${s.name}.`)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-6 inline-flex items-center self-start rounded-full bg-gradient-copper px-6 py-3 text-xs tracking-wider-2 uppercase text-primary-foreground"
+                  >
+                    Agendar aquí
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -585,7 +581,7 @@ function Index() {
       <footer className="border-t border-border bg-card py-14">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-center gap-8 text-center">
-            <img src={logoAsset.url} alt="Equilibrio Clinic" className="h-10 w-auto" />
+            <img src={logo} alt="Equilibrio Clinic" className="h-10 w-auto" />
             <p className="max-w-md text-sm text-muted-foreground">
               El lugar que tu cuerpo necesita. Cartagena de Indias, Colombia.
             </p>

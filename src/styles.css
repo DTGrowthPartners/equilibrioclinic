@@ -127,6 +127,11 @@
   .tracking-luxury { letter-spacing: 0.4em; }
   .tracking-wider-2 { letter-spacing: 0.18em; }
 
+  /* Slightly tighter luxury tracking on small screens to avoid eyebrow overflow */
+  @media (max-width: 640px) {
+    .tracking-luxury { letter-spacing: 0.25em; }
+  }
+
   .reveal-line {
     overflow: hidden;
     display: inline-block;
@@ -145,4 +150,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  /* GSAP is skipped under reduced-motion, so reveal the elements it would
+     normally animate in — otherwise headings/sections stay hidden. */
+  .reveal-line > span { transform: none !important; }
+  .reveal-section { opacity: 1 !important; }
 }

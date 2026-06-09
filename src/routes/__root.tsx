@@ -77,19 +77,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Equilibrio Clinic – El lugar que tu cuerpo necesita" },
+      {
+        name: "description",
+        content:
+          "Clínica estética en Cartagena especializada en depilación láser definitiva, estética avanzada y dermatología. Tecnología Soprano Ice Titanium.",
+      },
+      { name: "author", content: "Equilibrio Clinic" },
+      { property: "og:title", content: "Equilibrio Clinic – El lugar que tu cuerpo necesita" },
+      {
+        property: "og:description",
+        content: "Depilación láser premium, moldeamiento corporal y rejuvenecimiento facial en Cartagena.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Bodoni+Moda:ital,wght@0,400;0,500;0,700;1,400&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap",
       },
     ],
   }),

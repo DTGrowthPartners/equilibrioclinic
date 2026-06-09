@@ -102,8 +102,8 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
           ease: "power3.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none none",
+            start: "top 95%",
+            once: true,
           },
         });
       });
@@ -118,7 +118,8 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
           ease: "power3.out",
           scrollTrigger: {
             trigger: line,
-            start: "top 85%",
+            start: "top 95%",
+            once: true,
           },
         });
       });
@@ -132,7 +133,7 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
           duration: 1,
           stagger: 0.1,
           ease: "power3.out",
-          scrollTrigger: { trigger: grid, start: "top 80%" },
+          scrollTrigger: { trigger: grid, start: "top 95%", once: true },
         });
       });
 
@@ -143,8 +144,9 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
         duration: 0.9,
         stagger: 0.06,
         ease: "power3.out",
-        scrollTrigger: { trigger: ".promo-grid", start: "top 80%" },
+        scrollTrigger: { trigger: ".promo-grid", start: "top 95%", once: true },
       });
+
 
       // ───── CTA breathing (idle micro-animation) ─────
       gsap.to(".cta-breathe", {
@@ -160,14 +162,23 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
         clipPath: "inset(0 100% 0 0)",
         duration: 1.4,
         ease: "power3.out",
-        scrollTrigger: { trigger: ".wipe-image", start: "top 80%" },
+        scrollTrigger: { trigger: ".wipe-image", start: "top 95%", once: true },
       });
     }, root);
 
-    // ScrollTrigger refresh after layout settles
+    // Refresh ScrollTrigger después de que el layout se estabilice
+    // (el video del hero cambia la altura del documento al cargar)
     ScrollTrigger.refresh();
+    const refreshTimers = [
+      window.setTimeout(() => ScrollTrigger.refresh(), 300),
+      window.setTimeout(() => ScrollTrigger.refresh(), 1200),
+    ];
+    const onLoad = () => ScrollTrigger.refresh();
+    window.addEventListener("load", onLoad);
 
     return () => {
+      refreshTimers.forEach((t) => clearTimeout(t));
+      window.removeEventListener("load", onLoad);
       cancelAnimationFrame(rafId);
       lenis.destroy();
       ctx.revert();
@@ -175,3 +186,4 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
     };
   }, [scope]);
 }
+

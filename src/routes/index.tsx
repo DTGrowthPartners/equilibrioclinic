@@ -277,79 +277,6 @@ function Index() {
         </div>
       </section>
 
-      {/* ─────────── SERVICIOS ─────────── */}
-      <section id="servicios" className="reveal-section relative scroll-mt-20 bg-secondary py-16 md:scroll-mt-24 md:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-2xl">
-            <p className="tracking-luxury text-xs uppercase text-primary">• Nuestros servicios •</p>
-            <h2 className="mt-4 font-display text-4xl md:text-6xl">
-              <span className="reveal-line">
-                <span>Tratamientos de</span>
-              </span>{" "}
-              <span className="reveal-line">
-                <span className="font-script text-coral-deep">alta gama</span>
-              </span>
-            </h2>
-          </div>
-
-          <div className="cards-grid mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((s) => (
-              <a
-                key={s.title}
-                href={wa(s.msg)}
-                target="_blank"
-                rel="noreferrer"
-                className="service-card group flex flex-col overflow-hidden rounded-3xl bg-card shadow-card transition duration-500 hover:-translate-y-1 hover:shadow-soft"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[4/5]">
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col gap-3 p-6">
-                  <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2">
-                    {s.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{s.desc}</p>
-                  <span className="mt-auto pt-4 text-xs tracking-wider-2 uppercase text-primary">
-                    Cotizar por WhatsApp →
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
-
-          {/* ─────────── Banner Dermatología · Dra. Kathy Wu ─────────── */}
-          <a
-            href={DERMATOLOGIA_WA}
-            target="_blank"
-            rel="noreferrer"
-            className="service-card group mt-10 flex items-center gap-5 rounded-3xl bg-gradient-copper p-5 text-primary-foreground shadow-card transition duration-500 hover:-translate-y-1 hover:shadow-soft sm:gap-6 sm:p-6"
-          >
-            <img
-              src={draKathyImg}
-              alt="Dra. Kathy Wu"
-              loading="lazy"
-              className="h-16 w-16 flex-shrink-0 rounded-full border-2 border-primary-foreground/40 object-cover sm:h-20 sm:w-20"
-            />
-            <div className="flex flex-col gap-1">
-              <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2 sm:text-2xl">
-                Dermatología
-              </h3>
-              <p className="text-sm text-primary-foreground/90 sm:text-base">
-                Reserva una cita con la <strong className="font-semibold">Dra. Kathy Wu</strong>
-              </p>
-              <span className="mt-1 text-xs tracking-wider-2 uppercase text-primary-foreground/80">
-                Agendar por WhatsApp →
-              </span>
-            </div>
-          </a>
-        </div>
-      </section>
-
       {/* ─────────── DEPILACIÓN LÁSER ─────────── */}
       <section
         id="laser"
@@ -424,6 +351,79 @@ function Index() {
               Disponible en Sede Bocagrande · Sede Castellana
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ─────────── SERVICIOS ─────────── */}
+      <section id="servicios" className="reveal-section relative scroll-mt-20 bg-secondary py-16 md:scroll-mt-24 md:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
+            <p className="tracking-luxury text-xs uppercase text-primary">• Nuestros servicios •</p>
+            <h2 className="mt-4 font-display text-4xl md:text-6xl">
+              <span className="reveal-line">
+                <span>Tratamientos de</span>
+              </span>{" "}
+              <span className="reveal-line">
+                <span className="font-script text-coral-deep">alta gama</span>
+              </span>
+            </h2>
+          </div>
+
+          <div className="cards-grid mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((s) => (
+              <a
+                key={s.title}
+                href={wa(s.msg)}
+                target="_blank"
+                rel="noreferrer"
+                className="service-card group flex flex-col overflow-hidden rounded-3xl bg-card shadow-card transition duration-500 hover:-translate-y-1 hover:shadow-soft"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[4/5]">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6">
+                  <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{s.desc}</p>
+                  <span className="mt-auto pt-4 text-xs tracking-wider-2 uppercase text-primary">
+                    Cotizar por WhatsApp →
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* ─────────── Banner Dermatología · Dra. Kathy Wu ─────────── */}
+          <a
+            href={DERMATOLOGIA_WA}
+            target="_blank"
+            rel="noreferrer"
+            className="service-card group mt-10 flex items-center gap-5 rounded-3xl bg-gradient-copper p-5 text-primary-foreground shadow-card transition duration-500 hover:-translate-y-1 hover:shadow-soft sm:gap-6 sm:p-6"
+          >
+            <img
+              src={draKathyImg}
+              alt="Dra. Kathy Wu"
+              loading="lazy"
+              className="h-16 w-16 flex-shrink-0 rounded-full border-2 border-primary-foreground/40 object-cover sm:h-20 sm:w-20"
+            />
+            <div className="flex flex-col gap-1">
+              <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2 sm:text-2xl">
+                Dermatología
+              </h3>
+              <p className="text-sm text-primary-foreground/90 sm:text-base">
+                Reserva una cita con la <strong className="font-semibold">Dra. Kathy Wu</strong>
+              </p>
+              <span className="mt-1 text-xs tracking-wider-2 uppercase text-primary-foreground/80">
+                Agendar por WhatsApp →
+              </span>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -600,10 +600,10 @@ function Index() {
 
           <div className="mt-16 rounded-3xl bg-secondary p-10 text-center">
             <p className="mx-auto max-w-xl text-muted-foreground">
-              ¡Hola! Haz clic en uno de nuestros miembros para chatear en WhatsApp. Nuestro
-              equipo tarda unos minutos en contestar.
+              ¡Hola! Escríbenos por WhatsApp y con gusto te atendemos. Nuestro equipo
+              tarda unos minutos en contestar.
             </p>
-            <div className="cards-grid mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="cards-grid mx-auto mt-8 grid max-w-sm gap-4">
               {WA_CONTACTS.map((c) => (
                 <a
                   key={c.waId}

@@ -2,7 +2,7 @@
  * WhatsApp link helper.
  * Every CTA in the site routes to a real WhatsApp chat.
  */
-const PRIMARY = "573105305952"; // Asesora — 310 530 5952
+const PRIMARY = "573218066128"; // Línea principal — 321 806 6128
 
 export function wa(message?: string) {
   const base = `https://wa.me/${PRIMARY}`;
@@ -11,9 +11,7 @@ export function wa(message?: string) {
 }
 
 export const WA_CONTACTS = [
-  { label: "Asesora", phone: "310 530 5952", waId: "573105305952" },
-  { label: "Cotizaciones · Asistente 1", phone: "310 752 8529", waId: "573107528529" },
-  { label: "Cotizaciones · Asistente 2", phone: "300 739 9331", waId: "573007399331" },
+  { label: "Atención al cliente", phone: "321 806 6128", waId: PRIMARY },
 ];
 
 export function waLink(id: string, message?: string) {

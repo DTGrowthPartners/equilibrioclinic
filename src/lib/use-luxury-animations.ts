@@ -162,14 +162,23 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
         clipPath: "inset(0 100% 0 0)",
         duration: 1.4,
         ease: "power3.out",
-        scrollTrigger: { trigger: ".wipe-image", start: "top 80%" },
+        scrollTrigger: { trigger: ".wipe-image", start: "top 95%", once: true },
       });
     }, root);
 
-    // ScrollTrigger refresh after layout settles
+    // Refresh ScrollTrigger después de que el layout se estabilice
+    // (el video del hero cambia la altura del documento al cargar)
     ScrollTrigger.refresh();
+    const refreshTimers = [
+      window.setTimeout(() => ScrollTrigger.refresh(), 300),
+      window.setTimeout(() => ScrollTrigger.refresh(), 1200),
+    ];
+    const onLoad = () => ScrollTrigger.refresh();
+    window.addEventListener("load", onLoad);
 
     return () => {
+      refreshTimers.forEach((t) => clearTimeout(t));
+      window.removeEventListener("load", onLoad);
       cancelAnimationFrame(rafId);
       lenis.destroy();
       ctx.revert();
@@ -177,3 +186,4 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
     };
   }, [scope]);
 }
+

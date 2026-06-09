@@ -170,28 +170,56 @@ function Index() {
       </header>
 
       {/* ─────────── HERO ─────────── */}
-      <section id="inicio" className="hero relative overflow-hidden bg-gradient-coral">
-        <img
-          src={flowers}
-          alt=""
+      <section id="inicio" className="hero relative min-h-[100svh] overflow-hidden bg-foreground">
+        {/* Video de fondo */}
+        <video
+          className="hero-image absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={heroImg}
+        >
+          <source
+            src="https://equilibrioclinic.com.co/wp-content/uploads/2025/06/Generated-File-June-16-2025-1_47PM.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Overlays luxury: oscurece para legibilidad + tinte de marca */}
+        <div
           aria-hidden
-          className="hero-flower hero-flower-tl pointer-events-none absolute -top-10 -left-10 w-64 select-none opacity-90 md:w-96"
+          className="pointer-events-none absolute inset-0 bg-foreground/45"
         />
-        <img
-          src={flowers}
-          alt=""
+        <div
           aria-hidden
-          className="hero-flower hero-flower-br pointer-events-none absolute -right-10 -bottom-10 w-64 rotate-180 select-none opacity-90 md:w-96"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-foreground/30 via-transparent to-foreground/60"
         />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-          <div className="relative z-10 text-primary-foreground">
+        {/* Flores decorativas sobre el video */}
+        <img
+          src={flowers}
+          alt=""
+          aria-hidden
+          className="hero-flower hero-flower-tl pointer-events-none absolute -top-10 -left-10 w-64 select-none opacity-60 md:w-96"
+        />
+        <img
+          src={flowers}
+          alt=""
+          aria-hidden
+          className="hero-flower hero-flower-br pointer-events-none absolute -right-10 -bottom-10 w-64 rotate-180 select-none opacity-60 md:w-96"
+        />
+
+        {/* Contenido */}
+        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 py-28">
+          <div className="max-w-2xl text-primary-foreground">
             <p className="hero-eyebrow tracking-luxury text-xs uppercase text-primary-foreground/90">
               • Especial •
             </p>
             <h1 className="hero-title mt-4 font-display text-5xl leading-[1.05] md:text-7xl">
               El lugar que <br />
-              <span className="font-script text-6xl text-copper md:text-8xl">tu cuerpo</span>
+              <span className="font-script text-6xl text-peach md:text-8xl">tu cuerpo</span>
               <br />
               necesita
             </h1>
@@ -205,41 +233,17 @@ function Index() {
                   href={wa("Hola, quisiera agendar una cita.")}
                   target="_blank"
                   rel="noreferrer"
-                  className="cta-breathe inline-flex items-center rounded-full bg-foreground px-8 py-3.5 text-xs tracking-wider-2 uppercase text-background shadow-soft transition hover:opacity-90"
+                  className="cta-breathe inline-flex items-center rounded-full bg-background px-8 py-3.5 text-xs tracking-wider-2 uppercase text-foreground shadow-soft transition hover:opacity-90"
                 >
                   Agenda tu cita
                 </a>
                 <a
                   href="#servicios"
-                  className="inline-flex items-center rounded-full border border-primary-foreground/60 px-8 py-3.5 text-xs tracking-wider-2 uppercase text-primary-foreground transition hover:bg-primary-foreground/10"
+                  className="inline-flex items-center rounded-full border border-primary-foreground/60 px-8 py-3.5 text-xs tracking-wider-2 uppercase text-primary-foreground backdrop-blur-sm transition hover:bg-primary-foreground/10"
                 >
                   Ver servicios
                 </a>
               </div>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="hero-image relative aspect-[4/5] overflow-hidden rounded-3xl shadow-soft bg-foreground/10">
-              <video
-                className="h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster={heroImg}
-              >
-                <source
-                  src="https://equilibrioclinic.com.co/wp-content/uploads/2025/06/Generated-File-June-16-2025-1_47PM.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              {/* Sutil overlay para profundidad luxury */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/25 via-transparent to-transparent"
-              />
             </div>
           </div>
         </div>

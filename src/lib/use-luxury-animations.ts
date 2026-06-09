@@ -102,8 +102,8 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
           ease: "power3.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none none",
+            start: "top 95%",
+            once: true,
           },
         });
       });
@@ -118,7 +118,8 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
           ease: "power3.out",
           scrollTrigger: {
             trigger: line,
-            start: "top 85%",
+            start: "top 95%",
+            once: true,
           },
         });
       });
@@ -132,7 +133,7 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
           duration: 1,
           stagger: 0.1,
           ease: "power3.out",
-          scrollTrigger: { trigger: grid, start: "top 80%" },
+          scrollTrigger: { trigger: grid, start: "top 95%", once: true },
         });
       });
 
@@ -143,8 +144,9 @@ export function useLuxuryAnimations(scope: React.RefObject<HTMLElement | null>) 
         duration: 0.9,
         stagger: 0.06,
         ease: "power3.out",
-        scrollTrigger: { trigger: ".promo-grid", start: "top 80%" },
+        scrollTrigger: { trigger: ".promo-grid", start: "top 95%", once: true },
       });
+
 
       // ───── CTA breathing (idle micro-animation) ─────
       gsap.to(".cta-breathe", {

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
 import logoAsset from "@/assets/logo.asset.json";
 import sopranoAsset from "@/assets/soprano.asset.json";
+import flowers from "@/assets/flowers.png";
 
 import heroImg from "@/assets/hero.jpg";
 import laserImg from "@/assets/laser.jpg";
@@ -190,41 +191,28 @@ function Index() {
         {/* Overlays luxury: oscurece para legibilidad + tinte de marca */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-foreground/45"
+          className="pointer-events-none absolute inset-0 bg-black/60"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-foreground/30 via-transparent to-foreground/60"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"
         />
 
-        {/* Flores decorativas sobre el video */}
-        <img
-          src={flowers}
-          alt=""
-          aria-hidden
-          className="hero-flower hero-flower-tl pointer-events-none absolute -top-10 -left-10 w-64 select-none opacity-60 md:w-96"
-        />
-        <img
-          src={flowers}
-          alt=""
-          aria-hidden
-          className="hero-flower hero-flower-br pointer-events-none absolute -right-10 -bottom-10 w-64 rotate-180 select-none opacity-60 md:w-96"
-        />
 
         {/* Contenido */}
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 py-28">
-          <div className="max-w-2xl text-primary-foreground">
-            <p className="hero-eyebrow tracking-luxury text-xs uppercase text-primary-foreground/90">
+          <div className="max-w-2xl text-white">
+            <p className="hero-eyebrow tracking-luxury text-xs uppercase text-white/90">
               • Especial •
             </p>
             <h1 className="hero-title mt-4 font-display text-5xl leading-[1.05] md:text-7xl">
               El lugar que <br />
-              <span className="font-script text-6xl text-peach md:text-8xl">tu cuerpo</span>
+              <span className="font-script text-6xl text-white md:text-8xl">tu cuerpo</span>
               <br />
               necesita
             </h1>
             <div className="hero-sub mt-8 max-w-md space-y-6">
-              <p className="text-base text-primary-foreground/95 md:text-lg">
+              <p className="text-base text-white/95 md:text-lg">
                 Clínica estética premium en Cartagena. Expertos en depilación láser
                 definitiva, estética avanzada y dermatología.
               </p>
@@ -233,13 +221,13 @@ function Index() {
                   href={wa("Hola, quisiera agendar una cita.")}
                   target="_blank"
                   rel="noreferrer"
-                  className="cta-breathe inline-flex items-center rounded-full bg-background px-8 py-3.5 text-xs tracking-wider-2 uppercase text-foreground shadow-soft transition hover:opacity-90"
+                  className="cta-breathe inline-flex items-center rounded-full bg-white px-8 py-3.5 text-xs tracking-wider-2 uppercase text-foreground shadow-soft transition hover:opacity-90"
                 >
                   Agenda tu cita
                 </a>
                 <a
                   href="#servicios"
-                  className="inline-flex items-center rounded-full border border-primary-foreground/60 px-8 py-3.5 text-xs tracking-wider-2 uppercase text-primary-foreground backdrop-blur-sm transition hover:bg-primary-foreground/10"
+                  className="inline-flex items-center rounded-full border border-white/60 px-8 py-3.5 text-xs tracking-wider-2 uppercase text-white backdrop-blur-sm transition hover:bg-white/10"
                 >
                   Ver servicios
                 </a>

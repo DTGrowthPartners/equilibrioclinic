@@ -91,6 +91,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Equilibrio Clinic – El lugar que tu cuerpo necesita" },
+      { name: "description", content: "Aura Bloom is a luxury website designed to showcase services and encourage contact via WhatsApp." },
+      { property: "og:description", content: "Aura Bloom is a luxury website designed to showcase services and encourage contact via WhatsApp." },
+      { name: "twitter:description", content: "Aura Bloom is a luxury website designed to showcase services and encourage contact via WhatsApp." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a25c9e78-c52d-47b3-9c37-da1d5845371b/id-preview-4172c76c--9a458c32-843b-4296-9bd5-28d2675950df.lovable.app-1781038097362.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a25c9e78-c52d-47b3-9c37-da1d5845371b/id-preview-4172c76c--9a458c32-843b-4296-9bd5-28d2675950df.lovable.app-1781038097362.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

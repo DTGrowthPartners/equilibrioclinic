@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Build a self-contained Node server (.output/server/index.mjs) for the VPS deploy.
+  // Inside a Lovable sandbox this is overridden back to cloudflare-module automatically.
+  nitro: { preset: "node-server" },
 });

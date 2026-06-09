@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
 import logoAsset from "@/assets/logo.asset.json";
 import sopranoAsset from "@/assets/soprano.asset.json";
-import flowers from "@/assets/flowers.png";
+
 import heroImg from "@/assets/hero.jpg";
 import laserImg from "@/assets/laser.jpg";
 import facialImg from "@/assets/facial.jpg";

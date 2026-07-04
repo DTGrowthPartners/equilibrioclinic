@@ -105,6 +105,11 @@
     background: oklch(0.76 0.12 35 / 0.3);
     color: var(--foreground);
   }
+
+  :focus-visible {
+    outline: 2px solid var(--copper);
+    outline-offset: 3px;
+  }
 }
 
 @layer utilities {
@@ -142,6 +147,21 @@
     transform: translateY(110%);
     will-change: transform;
   }
+
+  /* 7º aniversario: cinta en loop infinito (dos copias, se desplaza -50%) */
+  .marquee {
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: marquee-scroll 26s linear infinite;
+  }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -155,4 +175,5 @@
      normally animate in — otherwise headings/sections stay hidden. */
   .reveal-line > span { transform: none !important; }
   .reveal-section { opacity: 1 !important; }
+  .marquee-track { animation: none !important; }
 }

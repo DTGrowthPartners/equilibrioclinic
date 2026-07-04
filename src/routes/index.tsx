@@ -28,12 +28,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Clínica estética en Cartagena: depilación láser definitiva con Soprano Ice Titanium, moldeamiento corporal, rejuvenecimiento facial y dermatología.",
+          "Clínica estética en Cartagena: depilación láser definitiva con Soprano Ice Titanium, moldeamiento corporal, rejuvenecimiento facial y dermatología. Celebramos 7 años con promociones especiales.",
       },
       { property: "og:title", content: "Equilibrio Clinic – Estética Premium en Cartagena" },
       {
         property: "og:description",
-        content: "Depilación láser premium y estética avanzada en Cartagena.",
+        content:
+          "7 años de estética premium en Cartagena. Depilación láser y promociones de aniversario.",
       },
     ],
   }),
@@ -43,9 +44,33 @@ export const Route = createFileRoute("/")({
 const NAV = [
   { label: "Inicio", href: "#inicio" },
   { label: "Depilación Láser", href: "#laser" },
+  { label: "Promos 7 Años", href: "#promos" },
   { label: "Servicios", href: "#servicios" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
+];
+
+const PROMOS7 = [
+  {
+    title: "Combos Láser Aniversario",
+    desc: "Paquetes especiales en axila, bikini y pierna completa para celebrar nuestros 7 años.",
+    msg: "Hola, quiero la promo de aniversario en Depilación Láser.",
+  },
+  {
+    title: "Rejuvenecimiento 360°",
+    desc: "Protocolo facial completo con beneficios exclusivos de celebración.",
+    msg: "Hola, quiero la promo de aniversario de Rejuvenecimiento 360°.",
+  },
+  {
+    title: "Moldeamiento Corporal",
+    desc: "Planes de esculpido y tonificación con condiciones especiales de aniversario.",
+    msg: "Hola, quiero la promo de aniversario de Moldeamiento Corporal.",
+  },
+  {
+    title: "Facial + Corporal",
+    desc: "Combina tus tratamientos favoritos y llévate el beneficio de celebración.",
+    msg: "Hola, quiero la promo de aniversario Facial + Corporal.",
+  },
 ];
 
 const SERVICES = [
@@ -124,9 +149,9 @@ function Index() {
       {/* ─────────── Top banner ─────────── */}
       <div className="bg-gradient-copper text-primary-foreground">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-2 gap-y-0.5 px-4 py-2 text-center text-[11px] sm:text-sm">
-          <span>✨ Estética premium en Cartagena · Depilación láser Soprano Ice Titanium</span>
+          <span>🎉 ¡Cumplimos 7 años! Promociones especiales de aniversario</span>
           <a
-            href={wa("Hola, quisiera agendar una cita en Equilibrio Clinic.")}
+            href={wa("Hola, quiero información sobre las promociones de aniversario.")}
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4 hover:opacity-80"
@@ -243,7 +268,7 @@ function Index() {
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 py-24 md:py-28">
           <div className="max-w-2xl text-white">
             <p className="hero-eyebrow tracking-luxury text-xs uppercase text-white/90">
-              • Especial •
+              • 7º Aniversario •
             </p>
             <h1 className="hero-title mt-4 font-display text-4xl leading-[1.05] sm:text-5xl md:text-7xl">
               El lugar que <br />
@@ -266,16 +291,48 @@ function Index() {
                   Agenda tu cita
                 </a>
                 <a
-                  href="#servicios"
+                  href="#promos"
                   className="inline-flex w-full items-center justify-center rounded-full border border-white/60 px-8 py-3.5 text-xs tracking-wider-2 uppercase text-white backdrop-blur-sm transition hover:bg-white/10 sm:w-auto"
                 >
-                  Ver servicios
+                  Promos 7 años
                 </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-2 text-[11px] tracking-wider-2 uppercase text-white/75">
+                <span>7 años de experiencia</span>
+                <span aria-hidden className="h-1 w-1 rounded-full bg-white/50" />
+                <span>2 sedes en Cartagena</span>
+                <span aria-hidden className="h-1 w-1 rounded-full bg-white/50" />
+                <span>Soprano Ice Titanium</span>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ─────────── Cinta 7º Aniversario ─────────── */}
+      <div className="marquee bg-gradient-copper py-3 text-primary-foreground" aria-hidden>
+        <div className="marquee-track">
+          {[0, 1].map((copy) => (
+            <div
+              key={copy}
+              className="flex shrink-0 items-center gap-6 pr-6 text-xs tracking-wider-2 uppercase"
+            >
+              {Array.from({ length: 3 }).map((_, i) => (
+                <span key={i} className="flex items-center gap-6">
+                  <span>7º Aniversario</span>
+                  <span className="text-primary-foreground/60">✦</span>
+                  <span>Promociones especiales</span>
+                  <span className="text-primary-foreground/60">✦</span>
+                  <span>Depilación láser premium</span>
+                  <span className="text-primary-foreground/60">✦</span>
+                  <span>Equilibrio Clinic</span>
+                  <span className="text-primary-foreground/60">✦</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* ─────────── DEPILACIÓN LÁSER ─────────── */}
       <section
@@ -350,6 +407,74 @@ function Index() {
             <p className="mt-6 text-center text-xs tracking-wider-2 uppercase text-foreground/70">
               Disponible en Sede Bocagrande · Sede Castellana
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────── PROMOS 7º ANIVERSARIO ─────────── */}
+      <section
+        id="promos"
+        className="reveal-section relative scroll-mt-20 overflow-hidden bg-foreground py-16 text-background md:scroll-mt-24 md:py-24"
+      >
+        <img
+          src={flowers}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute -top-16 -left-16 w-80 opacity-15"
+        />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-16">
+            {/* El "7" gigante */}
+            <div className="text-center lg:text-left">
+              <p className="tracking-luxury text-xs uppercase text-coral">• Aniversario •</p>
+              <h2 className="mt-2">
+                <span className="block font-display text-[8rem] italic leading-[0.85] text-gradient-copper sm:text-[10rem] md:text-[12rem]">
+                  7
+                </span>
+                <span className="mt-1 block font-script text-4xl text-coral sm:text-5xl">
+                  años contigo
+                </span>
+              </h2>
+              <p className="mx-auto mt-6 max-w-md text-background/80 lg:mx-0">
+                Siete años realzando la belleza y el bienestar de Cartagena. Lo celebramos
+                contigo: promociones especiales en nuestros tratamientos insignia.
+              </p>
+              <a
+                href={wa("Hola, quiero conocer las promociones del 7º aniversario.")}
+                target="_blank"
+                rel="noreferrer"
+                className="cta-breathe mt-8 inline-flex items-center justify-center rounded-full bg-gradient-copper px-8 py-3.5 text-xs tracking-wider-2 uppercase text-primary-foreground shadow-soft"
+              >
+                Quiero mi promo
+              </a>
+              <p className="mt-4 text-xs text-background/50">
+                *Promociones por tiempo limitado, válidas en ambas sedes.
+              </p>
+            </div>
+
+            {/* Promos */}
+            <div className="promo-grid grid gap-5 sm:grid-cols-2">
+              {PROMOS7.map((p) => (
+                <a
+                  key={p.title}
+                  href={wa(p.msg)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="promo-chip group flex flex-col gap-3 rounded-3xl border border-background/10 bg-background/5 p-6 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-copper-light hover:bg-background/10"
+                >
+                  <span className="inline-flex w-fit items-center rounded-full bg-gradient-copper px-3 py-1 text-[10px] tracking-wider-2 uppercase text-primary-foreground">
+                    Promo 7 años
+                  </span>
+                  <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm text-background/70">{p.desc}</p>
+                  <span className="mt-auto pt-2 text-xs tracking-wider-2 uppercase text-coral transition group-hover:translate-x-1">
+                    Cotizar por WhatsApp →
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -525,9 +650,9 @@ function Index() {
             </span>
           </h2>
           <p className="mt-8 text-lg text-primary-foreground/95">
-            Somos una clínica estética experta en depilación láser definitiva, estética
-            avanzada y dermatología. Combinamos tecnología de gama mundial con un equipo
-            cercano y profesional.
+            Desde hace 7 años somos la clínica estética experta en depilación láser
+            definitiva, estética avanzada y dermatología en Cartagena. Combinamos
+            tecnología de gama mundial con un equipo cercano y profesional.
           </p>
           <a
             href={wa("Hola, quisiera agendar una cita.")}
@@ -625,42 +750,92 @@ function Index() {
       </section>
 
       {/* ─────────── FOOTER ─────────── */}
-      <footer className="border-t border-border bg-card py-14">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col items-center gap-8 text-center">
-            <img src={logo} alt="Equilibrio Clinic" className="h-10 w-auto" />
-            <p className="max-w-md text-sm text-muted-foreground">
-              El lugar que tu cuerpo necesita. Cartagena de Indias, Colombia.
-            </p>
-            <div className="flex gap-6 text-sm tracking-wider-2 uppercase">
-              <a
-                href="https://www.instagram.com/equilibrio_clinic/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-muted-foreground transition hover:text-primary"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://www.facebook.com/p/Equilibrio-Clinic-100092585687784/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-muted-foreground transition hover:text-primary"
-              >
-                Facebook
-              </a>
-              <a
-                href="https://www.tiktok.com/@equilibrio_clinic"
-                target="_blank"
-                rel="noreferrer"
-                className="text-muted-foreground transition hover:text-primary"
-              >
-                TikTok
-              </a>
+      <footer className="border-t border-border bg-card">
+        <div className="mx-auto max-w-7xl px-6 py-14">
+          <div className="grid gap-10 text-center md:grid-cols-3 md:text-left">
+            <div className="flex flex-col items-center gap-4 md:items-start">
+              <img src={logo} alt="Equilibrio Clinic" className="h-10 w-auto" />
+              <p className="max-w-xs text-sm text-muted-foreground">
+                El lugar que tu cuerpo necesita. 7 años cuidando la belleza de Cartagena.
+              </p>
+              <div className="flex gap-5 text-xs tracking-wider-2 uppercase">
+                <a
+                  href="https://www.instagram.com/equilibrio_clinic/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-muted-foreground transition hover:text-primary"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.facebook.com/p/Equilibrio-Clinic-100092585687784/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-muted-foreground transition hover:text-primary"
+                >
+                  Facebook
+                </a>
+                <a
+                  href="https://www.tiktok.com/@equilibrio_clinic"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-muted-foreground transition hover:text-primary"
+                >
+                  TikTok
+                </a>
+              </div>
             </div>
-            <p className="text-xs text-muted-foreground">
-              © {new Date().getFullYear()} Equilibrio Clinic. Todos los derechos reservados.
-            </p>
+
+            <nav aria-label="Enlaces del sitio">
+              <h4 className="font-condensed text-sm font-semibold uppercase tracking-wider-2">
+                Navegación
+              </h4>
+              <ul className="mt-4 space-y-2 text-sm">
+                {NAV.map((n) => (
+                  <li key={n.href}>
+                    <a
+                      href={n.href}
+                      className="text-muted-foreground transition hover:text-primary"
+                    >
+                      {n.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div>
+              <h4 className="font-condensed text-sm font-semibold uppercase tracking-wider-2">
+                Sedes
+              </h4>
+              <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+                <li>
+                  <span className="font-medium text-foreground">Bocagrande</span>
+                  <br />
+                  Cra. 2 #6-137 Piso 2, Cartagena.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">Castellana</span>
+                  <br />
+                  Dg. 31 #62-57, Chipre, Cartagena.
+                </li>
+                <li>
+                  <a
+                    href={wa("Hola, quiero información de Equilibrio Clinic.")}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-primary"
+                  >
+                    WhatsApp: 321 806 6128
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 border-t border-border pt-6 text-center text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Equilibrio Clinic · 7 años contigo. Todos los
+            derechos reservados.
           </div>
         </div>
       </footer>

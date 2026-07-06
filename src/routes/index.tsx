@@ -17,7 +17,7 @@ import sedeCastellanaImg from "@/assets/sede-castellana.png";
 import draKathyImg from "@/assets/dra-kathy-wu.jpg";
 import promo67Img from "@/assets/promo-67-dcto.webp";
 import promoAniversarioBlancoImg from "@/assets/promo-aniversario-blanco.webp";
-import resultadoAxilasImg from "@/assets/resultado-axilas.jpg";
+import resultadoAbdomenImg from "@/assets/resultado-abdomen.jpg";
 import sesionBikiniImg from "@/assets/sesion-bikini.jpg";
 import sesionPiernasImg from "@/assets/sesion-piernas.jpg";
 import sesionAxilasImg from "@/assets/sesion-axilas.jpg";
@@ -640,8 +640,8 @@ function Index() {
             {/* Destacado: antes / después */}
             <figure className="service-card group relative overflow-hidden rounded-3xl shadow-card sm:col-span-2 sm:row-span-2">
               <img
-                src={resultadoAxilasImg}
-                alt="Antes y después de depilación láser en axilas"
+                src={resultadoAbdomenImg}
+                alt="Antes y después de depilación láser en abdomen bajo"
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
@@ -650,7 +650,7 @@ function Index() {
                   Antes → Después
                 </span>
                 <p className="mt-2 font-condensed text-lg font-semibold uppercase tracking-wider-2 text-white">
-                  Axilas · Resultados reales
+                  Abdomen bajo · Resultados reales
                 </p>
               </figcaption>
             </figure>

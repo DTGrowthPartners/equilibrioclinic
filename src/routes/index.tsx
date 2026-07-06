@@ -525,6 +525,15 @@ function Index() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                   />
+                  <span className="absolute top-3 left-3 rounded-full bg-noir/85 px-3 py-1 text-[10px] font-semibold tracking-wider-2 uppercase text-gold backdrop-blur-sm">
+                    Aniversario
+                  </span>
+                  <img
+                    src={promo67Img}
+                    alt="67% DCTO — solo 70 cupos"
+                    loading="lazy"
+                    className="absolute right-3 bottom-3 h-16 w-auto drop-shadow-lg sm:h-20"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-6">
                   <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2">

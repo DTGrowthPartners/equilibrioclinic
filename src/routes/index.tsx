@@ -171,24 +171,25 @@ function Index() {
       {/* ─────────── Navigation ─────────── */}
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background/80 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 md:py-2.5">
+          {/* El badge sobresale del header sin aumentar su altura */}
           <a
             href="#inicio"
             onClick={() => setMenuOpen(false)}
             aria-label="Equilibrio Clinic — Promo Aniversario: 67% de descuento"
-            className="flex items-center"
+            className="relative block h-16 w-32 md:h-20 md:w-56"
           >
             <img
               src={promo67Img}
               alt="Equilibrio Clinic — 67% DCTO, solo 70 cupos"
-              className="h-16 w-auto drop-shadow-md md:h-20"
+              className="absolute top-0 left-0 z-10 h-24 w-auto max-w-none drop-shadow-lg md:h-36"
             />
           </a>
-          <ul className="hidden items-center gap-8 text-sm tracking-wider-2 uppercase lg:flex">
+          <ul className="hidden items-center gap-6 text-sm tracking-wider-2 uppercase lg:flex xl:gap-8">
             {NAV.map((n) => (
               <li key={n.href}>
                 <a
                   href={n.href}
-                  className="text-foreground/70 transition-colors duration-300 hover:text-primary"
+                  className="whitespace-nowrap text-foreground/70 transition-colors duration-300 hover:text-primary"
                 >
                   {n.label}
                 </a>
@@ -200,7 +201,7 @@ function Index() {
               href={wa("Hola, quisiera agendar una cita en Equilibrio Clinic.")}
               target="_blank"
               rel="noreferrer"
-              className="cta-breathe hidden items-center rounded-full bg-gradient-copper px-5 py-2.5 text-xs font-medium tracking-wider-2 uppercase text-primary-foreground shadow-soft transition hover:opacity-95 sm:inline-flex"
+              className="cta-breathe hidden items-center whitespace-nowrap rounded-full bg-gradient-copper px-5 py-2.5 text-xs font-medium tracking-wider-2 uppercase text-primary-foreground shadow-soft transition hover:opacity-95 sm:inline-flex"
             >
               Agenda tu cita
             </a>

@@ -171,9 +171,23 @@ function Index() {
       {/* ─────────── Navigation ─────────── */}
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background/80 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-          <a href="#inicio" onClick={() => setMenuOpen(false)} className="flex items-center">
-            <img src={logo} alt="Equilibrio Clinic" className="h-8 w-auto md:h-10" />
-          </a>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <a href="#inicio" onClick={() => setMenuOpen(false)} className="flex items-center">
+              <img src={logo} alt="Equilibrio Clinic" className="h-8 w-auto md:h-10" />
+            </a>
+            <a
+              href="#promos"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Promo Aniversario: 67% de descuento — solo 70 cupos"
+              className="flex items-center"
+            >
+              <img
+                src={promo67Img}
+                alt="67% DCTO — solo 70 cupos"
+                className="h-9 w-auto drop-shadow-md transition hover:scale-105 md:h-11"
+              />
+            </a>
+          </div>
           <ul className="hidden items-center gap-8 text-sm tracking-wider-2 uppercase lg:flex">
             {NAV.map((n) => (
               <li key={n.href}>
@@ -438,13 +452,7 @@ function Index() {
                 src={promoAniversarioBlancoImg}
                 alt="Promo Aniversario 7 · Equilibrio Clinic"
                 loading="lazy"
-                className="mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0"
-              />
-              <img
-                src={promo67Img}
-                alt="67% de descuento — solo 70 cupos disponibles"
-                loading="lazy"
-                className="mx-auto mt-4 w-full max-w-sm drop-shadow-2xl sm:max-w-md lg:mx-0"
+                className="mx-auto w-full max-w-sm sm:max-w-md lg:mx-0"
               />
               <p className="mx-auto mt-6 max-w-md text-background/80 lg:mx-0">
                 Siete años realzando la belleza y el bienestar de Cartagena. Lo celebramos

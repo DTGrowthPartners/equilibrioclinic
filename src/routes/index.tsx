@@ -154,14 +154,14 @@ function Index() {
   return (
     <main ref={scope} className="overflow-x-hidden bg-background text-foreground">
       {/* ─────────── Top banner ─────────── */}
-      <div className="bg-gradient-copper text-primary-foreground">
+      <div className="bg-noir text-gold-light">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-2 gap-y-0.5 px-4 py-2 text-center text-[11px] sm:text-sm">
           <span>🎉 Promo Aniversario: 67% DCTO — solo 70 cupos disponibles</span>
           <a
             href={wa("Hola, quiero información sobre las promociones de aniversario.")}
             target="_blank"
             rel="noreferrer"
-            className="font-medium underline underline-offset-4 hover:opacity-80"
+            className="font-medium text-gold underline underline-offset-4 hover:opacity-80"
           >
             Agenda aquí
           </a>
@@ -176,12 +176,12 @@ function Index() {
             href="#inicio"
             onClick={() => setMenuOpen(false)}
             aria-label="Equilibrio Clinic — Promo Aniversario: 67% de descuento"
-            className="relative block h-16 w-32 md:h-20 md:w-56"
+            className="relative block h-16 w-32 md:-ml-3 md:h-20 md:w-48 lg:-ml-4"
           >
             <img
               src={promo67Img}
               alt="Equilibrio Clinic — 67% DCTO, solo 70 cupos"
-              className="absolute top-0 left-0 z-10 h-24 w-auto max-w-none drop-shadow-lg md:h-36"
+              className="absolute top-0 left-0 z-10 h-24 w-auto max-w-none drop-shadow-lg md:h-32 xl:h-36"
             />
           </a>
           <ul className="hidden items-center gap-6 text-sm tracking-wider-2 uppercase lg:flex xl:gap-8">
@@ -309,7 +309,7 @@ function Index() {
                 </a>
                 <a
                   href="#promos"
-                  className="inline-flex w-full items-center justify-center rounded-full border border-white/60 px-8 py-3.5 text-xs tracking-wider-2 uppercase text-white backdrop-blur-sm transition hover:bg-white/10 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-full border border-gold/80 px-8 py-3.5 text-xs tracking-wider-2 uppercase text-gold-light backdrop-blur-sm transition hover:bg-gold/15 sm:w-auto"
                 >
                   Promos 7 años
                 </a>
@@ -327,7 +327,7 @@ function Index() {
       </section>
 
       {/* ─────────── Cinta 7º Aniversario ─────────── */}
-      <div className="marquee bg-gradient-copper py-3 text-primary-foreground" aria-hidden>
+      <div className="marquee bg-noir py-3 text-gold" aria-hidden>
         <div className="marquee-track">
           {[0, 1].map((copy) => (
             <div
@@ -337,13 +337,13 @@ function Index() {
               {Array.from({ length: 3 }).map((_, i) => (
                 <span key={i} className="flex items-center gap-6">
                   <span>7º Aniversario</span>
-                  <span className="text-primary-foreground/60">✦</span>
-                  <span>67% DCTO</span>
-                  <span className="text-primary-foreground/60">✦</span>
+                  <span className="text-gold/50">✦</span>
+                  <span className="text-gold-light">67% DCTO</span>
+                  <span className="text-gold/50">✦</span>
                   <span>Solo 70 cupos</span>
-                  <span className="text-primary-foreground/60">✦</span>
-                  <span>Equilibrio Clinic</span>
-                  <span className="text-primary-foreground/60">✦</span>
+                  <span className="text-gold/50">✦</span>
+                  <span className="text-gold-light">Equilibrio Clinic</span>
+                  <span className="text-gold/50">✦</span>
                 </span>
               ))}
             </div>
@@ -431,7 +431,7 @@ function Index() {
       {/* ─────────── PROMOS 7º ANIVERSARIO ─────────── */}
       <section
         id="promos"
-        className="reveal-section relative scroll-mt-20 overflow-hidden bg-foreground py-16 text-background md:scroll-mt-24 md:py-24"
+        className="reveal-section relative scroll-mt-20 overflow-hidden bg-noir py-16 text-background md:scroll-mt-24 md:py-24"
       >
         <img
           src={flowers}
@@ -458,11 +458,11 @@ function Index() {
                 href={wa("Hola, quiero mi 67% de descuento del 7º aniversario.")}
                 target="_blank"
                 rel="noreferrer"
-                className="cta-breathe mt-8 inline-flex items-center justify-center rounded-full bg-gradient-copper px-8 py-3.5 text-xs tracking-wider-2 uppercase text-primary-foreground shadow-soft"
+                className="cta-breathe mt-8 inline-flex items-center justify-center rounded-full bg-gradient-gold px-8 py-3.5 text-xs font-semibold tracking-wider-2 uppercase text-noir shadow-soft"
               >
                 Quiero mi 67% DCTO
               </a>
-              <p className="mt-4 text-xs text-background/50">
+              <p className="mt-4 text-xs text-gold/60">
                 *Solo 70 cupos disponibles. Promoción por tiempo limitado en ambas sedes.
               </p>
             </div>
@@ -475,16 +475,16 @@ function Index() {
                   href={wa(p.msg)}
                   target="_blank"
                   rel="noreferrer"
-                  className="promo-chip group flex flex-col gap-3 rounded-3xl border border-background/10 bg-background/5 p-6 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-copper-light hover:bg-background/10"
+                  className="promo-chip group flex flex-col gap-3 rounded-3xl border border-gold/20 bg-background/5 p-6 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-gold hover:bg-background/10"
                 >
-                  <span className="inline-flex w-fit items-center rounded-full bg-gradient-copper px-3 py-1 text-[10px] tracking-wider-2 uppercase text-primary-foreground">
+                  <span className="inline-flex w-fit items-center rounded-full bg-gradient-gold px-3 py-1 text-[10px] font-semibold tracking-wider-2 uppercase text-noir">
                     Promo 7 años
                   </span>
-                  <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2">
+                  <h3 className="font-condensed text-xl font-semibold uppercase tracking-wider-2 text-gold-light">
                     {p.title}
                   </h3>
                   <p className="text-sm text-background/70">{p.desc}</p>
-                  <span className="mt-auto pt-2 text-xs tracking-wider-2 uppercase text-coral transition group-hover:translate-x-1">
+                  <span className="mt-auto pt-2 text-xs tracking-wider-2 uppercase text-gold transition group-hover:translate-x-1">
                     Cotizar por WhatsApp →
                   </span>
                 </a>

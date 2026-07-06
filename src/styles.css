@@ -39,6 +39,9 @@
   --color-nude: var(--nude);
   --color-copper: var(--copper);
   --color-copper-light: var(--copper-light);
+  --color-noir: var(--noir);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
 
   --font-script: "Pinyon Script", "Allura", cursive;
   --font-display: "Bodoni Moda", "Cormorant Garamond", serif;
@@ -57,6 +60,11 @@
   --nude: oklch(0.86 0.06 60);           /* #E8C5AE */
   --copper: oklch(0.55 0.10 50);         /* #B5764B */
   --copper-light: oklch(0.72 0.10 55);
+
+  /* Aniversario 7: negro + dorado */
+  --noir: oklch(0.18 0.015 75);          /* negro cálido */
+  --gold: oklch(0.72 0.13 90);           /* dorado #D4AF37 aprox */
+  --gold-light: oklch(0.88 0.11 98);     /* dorado claro / champagne */
 
   --background: oklch(0.985 0.012 50);   /* warm off-white */
   --foreground: oklch(0.28 0.05 35);     /* deep cocoa */
@@ -84,6 +92,7 @@
   --gradient-coral: linear-gradient(180deg, oklch(0.76 0.12 35) 0%, oklch(0.86 0.08 45) 100%);
   --gradient-warm: linear-gradient(135deg, oklch(0.80 0.10 40) 0%, oklch(0.88 0.06 55) 100%);
   --gradient-copper: linear-gradient(135deg, oklch(0.55 0.10 50), oklch(0.72 0.10 55));
+  --gradient-gold: linear-gradient(135deg, oklch(0.50 0.10 88) 0%, oklch(0.78 0.14 94) 40%, oklch(0.94 0.10 100) 55%, oklch(0.68 0.13 90) 100%);
   --shadow-soft: 0 20px 60px -20px oklch(0.55 0.10 50 / 0.25);
   --shadow-card: 0 12px 40px -16px oklch(0.40 0.08 40 / 0.20);
 }
@@ -120,6 +129,13 @@
   .bg-gradient-coral { background: var(--gradient-coral); }
   .bg-gradient-warm { background: var(--gradient-warm); }
   .bg-gradient-copper { background: var(--gradient-copper); }
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .text-gradient-copper {
     background: var(--gradient-copper);
     -webkit-background-clip: text;

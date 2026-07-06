@@ -15,6 +15,13 @@ import maquinaImg from "@/assets/maquina-soprano.png";
 import sedeBocagrandeImg from "@/assets/sede-bocagrande.png";
 import sedeCastellanaImg from "@/assets/sede-castellana.png";
 import draKathyImg from "@/assets/dra-kathy-wu.jpg";
+import promo67Img from "@/assets/promo-67-dcto.webp";
+import promoAniversarioBlancoImg from "@/assets/promo-aniversario-blanco.webp";
+import resultadoAxilasImg from "@/assets/resultado-axilas.jpg";
+import sesionBikiniImg from "@/assets/sesion-bikini.jpg";
+import sesionPiernasImg from "@/assets/sesion-piernas.jpg";
+import sesionAxilasImg from "@/assets/sesion-axilas.jpg";
+import sesionLaserImg from "@/assets/sesion-laser.jpg";
 
 const DERMATOLOGIA_WA =
   "https://web.whatsapp.com/send/?phone=573005410171&text=Hola%20Dra%20Kathy!%20Vengo%20de%20D%C3%ADa%20de%20las%20Madres%20Links%2C%20quiero%20agendar%20una%20cita&type=phone_number&app_absent=0";
@@ -149,7 +156,7 @@ function Index() {
       {/* ─────────── Top banner ─────────── */}
       <div className="bg-gradient-copper text-primary-foreground">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-2 gap-y-0.5 px-4 py-2 text-center text-[11px] sm:text-sm">
-          <span>🎉 ¡Cumplimos 7 años! Promociones especiales de aniversario</span>
+          <span>🎉 Promo Aniversario: 67% DCTO — solo 70 cupos disponibles</span>
           <a
             href={wa("Hola, quiero información sobre las promociones de aniversario.")}
             target="_blank"
@@ -321,9 +328,9 @@ function Index() {
                 <span key={i} className="flex items-center gap-6">
                   <span>7º Aniversario</span>
                   <span className="text-primary-foreground/60">✦</span>
-                  <span>Promociones especiales</span>
+                  <span>67% DCTO</span>
                   <span className="text-primary-foreground/60">✦</span>
-                  <span>Depilación láser premium</span>
+                  <span>Solo 70 cupos</span>
                   <span className="text-primary-foreground/60">✦</span>
                   <span>Equilibrio Clinic</span>
                   <span className="text-primary-foreground/60">✦</span>
@@ -424,31 +431,35 @@ function Index() {
         />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-16">
-            {/* El "7" gigante */}
+            {/* Promo Aniversario 7 · 67% DCTO */}
             <div className="text-center lg:text-left">
-              <p className="tracking-luxury text-xs uppercase text-coral">• Aniversario •</p>
-              <h2 className="mt-2">
-                <span className="block font-display text-[8rem] italic leading-[0.85] text-gradient-copper sm:text-[10rem] md:text-[12rem]">
-                  7
-                </span>
-                <span className="mt-1 block font-script text-4xl text-coral sm:text-5xl">
-                  años contigo
-                </span>
-              </h2>
+              <h2 className="sr-only">Promo Aniversario 7 — 67% de descuento</h2>
+              <img
+                src={promoAniversarioBlancoImg}
+                alt="Promo Aniversario 7 · Equilibrio Clinic"
+                loading="lazy"
+                className="mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0"
+              />
+              <img
+                src={promo67Img}
+                alt="67% de descuento — solo 70 cupos disponibles"
+                loading="lazy"
+                className="mx-auto mt-4 w-full max-w-sm drop-shadow-2xl sm:max-w-md lg:mx-0"
+              />
               <p className="mx-auto mt-6 max-w-md text-background/80 lg:mx-0">
                 Siete años realzando la belleza y el bienestar de Cartagena. Lo celebramos
-                contigo: promociones especiales en nuestros tratamientos insignia.
+                contigo con un descuento histórico en nuestros tratamientos insignia.
               </p>
               <a
-                href={wa("Hola, quiero conocer las promociones del 7º aniversario.")}
+                href={wa("Hola, quiero mi 67% de descuento del 7º aniversario.")}
                 target="_blank"
                 rel="noreferrer"
                 className="cta-breathe mt-8 inline-flex items-center justify-center rounded-full bg-gradient-copper px-8 py-3.5 text-xs tracking-wider-2 uppercase text-primary-foreground shadow-soft"
               >
-                Quiero mi promo
+                Quiero mi 67% DCTO
               </a>
               <p className="mt-4 text-xs text-background/50">
-                *Promociones por tiempo limitado, válidas en ambas sedes.
+                *Solo 70 cupos disponibles. Promoción por tiempo limitado en ambas sedes.
               </p>
             </div>
 
@@ -587,6 +598,72 @@ function Index() {
                   Cotizar →
                 </span>
               </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────── GALERÍA / RESULTADOS ─────────── */}
+      <section className="reveal-section bg-secondary py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center">
+            <p className="tracking-luxury text-xs uppercase text-primary">
+              • Resultados reales •
+            </p>
+            <h2 className="mt-4 font-display text-4xl md:text-6xl">
+              <span className="reveal-line">
+                <span>Así se vive</span>
+              </span>{" "}
+              <span className="reveal-line">
+                <span className="font-script text-coral-deep">tu experiencia</span>
+              </span>
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
+              Sesiones reales en nuestras sedes y los resultados que nos respaldan.
+            </p>
+          </div>
+
+          <div className="cards-grid mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Destacado: antes / después */}
+            <figure className="service-card group relative overflow-hidden rounded-3xl shadow-card sm:col-span-2 sm:row-span-2">
+              <img
+                src={resultadoAxilasImg}
+                alt="Antes y después de depilación láser en axilas"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 pt-14">
+                <span className="inline-flex items-center rounded-full bg-gradient-copper px-3 py-1 text-[10px] tracking-wider-2 uppercase text-primary-foreground">
+                  Antes → Después
+                </span>
+                <p className="mt-2 font-condensed text-lg font-semibold uppercase tracking-wider-2 text-white">
+                  Axilas · Resultados reales
+                </p>
+              </figcaption>
+            </figure>
+
+            {[
+              { img: sesionBikiniImg, label: "Bikini" },
+              { img: sesionPiernasImg, label: "Piernas" },
+              { img: sesionAxilasImg, label: "Axilas" },
+              { img: sesionLaserImg, label: "Soprano en acción" },
+            ].map((g) => (
+              <figure
+                key={g.label}
+                className="service-card group relative aspect-square overflow-hidden rounded-3xl shadow-card"
+              >
+                <img
+                  src={g.img}
+                  alt={`Sesión de depilación láser — ${g.label}`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 pt-10">
+                  <p className="font-condensed text-sm font-semibold uppercase tracking-wider-2 text-white">
+                    {g.label}
+                  </p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>

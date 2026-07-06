@@ -170,7 +170,7 @@ function Index() {
 
       {/* ─────────── Navigation ─────────── */}
       <header className="sticky top-0 z-40 border-b border-border/40 bg-background/80 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 md:py-2.5">
           <a
             href="#inicio"
             onClick={() => setMenuOpen(false)}
@@ -180,7 +180,7 @@ function Index() {
             <img
               src={promo67Img}
               alt="Equilibrio Clinic — 67% DCTO, solo 70 cupos"
-              className="h-10 w-auto drop-shadow-md md:h-12"
+              className="h-16 w-auto drop-shadow-md md:h-20"
             />
           </a>
           <ul className="hidden items-center gap-8 text-sm tracking-wider-2 uppercase lg:flex">

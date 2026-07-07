@@ -176,7 +176,7 @@ function Index() {
             href="#inicio"
             onClick={() => setMenuOpen(false)}
             aria-label="Equilibrio Clinic — Promo Aniversario: 67% de descuento"
-            className="relative block h-16 w-32 md:-ml-3 md:h-20 md:w-48 lg:-ml-4"
+            className="relative block h-16 w-32 md:-ml-4 md:h-20 md:w-44 lg:-ml-6"
           >
             <img
               src={promo67Img}
@@ -184,9 +184,12 @@ function Index() {
               className="absolute top-0 left-0 z-10 h-24 w-auto max-w-none drop-shadow-lg md:h-32 xl:h-36"
             />
           </a>
-          <ul className="hidden items-center gap-6 text-sm tracking-wider-2 uppercase lg:flex xl:gap-8">
-            {NAV.map((n) => (
-              <li key={n.href}>
+          <ul className="hidden items-center text-[13px] tracking-wider-2 uppercase lg:flex">
+            {NAV.map((n, i) => (
+              <li key={n.href} className="flex items-center">
+                {i > 0 && (
+                  <span aria-hidden className="mx-3 h-3.5 w-px bg-foreground/20 xl:mx-4" />
+                )}
                 <a
                   href={n.href}
                   className="whitespace-nowrap text-foreground/70 transition-colors duration-300 hover:text-primary"
